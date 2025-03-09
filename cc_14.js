@@ -5,6 +5,9 @@ function addSupportTicket(customerName, issueDescription, priorityLevel) {
     //Create a new ticket div
     const ticket = document.createElement("div");
     ticket.classList.add("support-ticket");
+    if (priorityLevel === "High") {
+        ticket.classList.add("high-priority");
+    }
     //Create a heading for the customer name
     const nameHeading = document.createElement("h3");
     nameHeading.textContent = customerName;
@@ -28,4 +31,15 @@ function addSupportTicket(customerName, issueDescription, priorityLevel) {
     ticket.appendChild(resolveButton);
     //Append the ticket to the ticket container
     ticketContainer.appendChild(ticket);
+}
+function highlightHighPriorityTickets() {
+    //Select all high-priority tickets using querySelectorAll
+    const highPriorityTickets = document.querySelectorAll(".high-priority");
+    //Convert NodeList to an array using Array.from()
+    const highPriorityArray = Array.from(highPriorityTickets);
+    //Loop through each high-priority ticket and apply a style
+    highPriorityArray.forEach(ticket => {
+        ticket.style.backgroundColor = "#ffeb3b";  //Change background color to yellow
+        ticket.style.border = "2px solid #f44336"; //Add a red border
+    });
 }
