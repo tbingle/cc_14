@@ -24,6 +24,23 @@
             padding: 20px;
             margin-top: 20px;
         }
+        .support-ticket {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -36,10 +53,13 @@
         <div id="ticketContainer">
             <!-- Tickets will be dynamically added here -->
         </div>
+        <button onclick="addSupportTicket('Stevi Smalls', 'Unable to login', 'High')">Add Ticket</button>
+        <button onclick="addSupportTicket('Will Smith', 'Page not loading', 'Low')">Add Ticket</button>
     </main>
 
     <footer>
         <p>&copy; 2025 Support Co. All rights reserved.</p>
     </footer>
+    <script src="cc_14.js"></script>
 </body>
 </html>
