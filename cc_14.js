@@ -22,6 +22,7 @@ function addSupportTicket(customerName, issueDescription, priorityLevel) {
     resolveButton.textContent = "Resolve"; 
     //Attach an event listener to remove the ticket when clicked
     resolveButton.addEventListener("click", function () {
+        event.stopPropagation();
         ticketContainer.removeChild(ticket);
     });
     //Append the elements to the ticket div
@@ -43,3 +44,6 @@ function highlightHighPriorityTickets() {
         ticket.style.border = "2px solid #f44336"; //Add a red border
     });
 }
+document.getElementById("ticketContainer").addEventListener("click", function (event) {
+    console.log("A ticket was clicked!", event.target);
+});
